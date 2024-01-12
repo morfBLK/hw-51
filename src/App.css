@@ -1,42 +1,37 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.btn {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #000000, #333333);
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    color: #ffdab9;
+    margin-bottom: 50px;
+    font-size: 15px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.btn:active {
+    border: 5px solid #083b3b;
+    color: #0baaaa;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-box {
+    text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.ball-number {
+    display: flex;
 }
 
-.card {
-  padding: 2em;
+.App {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.read-the-docs {
-  color: #888;
+
+body {
+    background-image: url("https://png.pngtree.com/background/20230425/original/pngtree-lucky-lotto-ball-which-is-covered-with-mud-and-water-haze-picture-image_2467021.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
