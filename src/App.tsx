@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import {useState} from 'react'
 import './App.css'
+import Number from "./numbers/Number"
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [number, setNumber] = useState([0, 0, 0, 0, 0])
 
+  const printNumbers = () => {
+    const massNumbers: number[] = [];
+    do {
+      let randomNumber = Math.floor(Math.random() * (36 - 5 + 1)) + 5;
+      if (massNumbers.length === 0) {
+        massNumbers.push(randomNumber);
+      } else if (massNumbers.includes(randomNumber)) {
+        randomNumber = Math.floor(Math.random() * (36 - 5 + 1)) + 5;
+      } else {
+        massNumbers.push(randomNumber);
+      }
+
+    } while (massNumbers.length <= 4)
+    massNumbers.sort((a, b) => {
+      return a - b;
+    });
+    setNumber(massNumbers);
+  }
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
 
-export default App
+    <div className="App">
+      <div className="main-box">
+        <button onClick={printNumbers} className="btn">New numbers</button>
+        <div className="ball-number">
+          <Number number={number[0]}></Number>
+          <Number number={number[1]}></Number>
+          <Number number={number[2]}></Number>
+          <Number number={number[3]}></Number>
+          <Number number={number[4]}></Number>
+        </div>
+      </div>
+    </div>
+
+  );
+};;
+
+export default App;
